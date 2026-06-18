@@ -34,11 +34,12 @@
         </div>
     </section>
 
-    <!-- BCC Course Section -->
+    <!-- Courses Section -->
     <section id="courses" class="courses">
         <div class="container">
-            <h2>Our Featured Course</h2>
+            <h2>Our Featured Courses</h2>
             
+            <!-- BCC Course Card -->
             <div class="course-card featured">
                 <div class="course-header">
                     <h3>BCC - Basic Computer Course</h3>
@@ -46,6 +47,7 @@
                 </div>
                 <div class="course-details">
                     <p class="duration"><i class="fas fa-clock"></i> <strong>Duration:</strong> 45 Days</p>
+                    <p class="fees"><i class="fas fa-rupee-sign"></i> <strong>Fees:</strong> Contact Us</p>
                     <p class="certificate"><i class="fas fa-certificate"></i> <strong>Certificate Provided After Completion</strong></p>
                 </div>
                 <div class="course-content">
@@ -60,6 +62,34 @@
                         <li><i class="fas fa-check-circle"></i> File & Folder Management</li>
                         <li><i class="fas fa-check-circle"></i> Hindi & English Typing</li>
                         <li><i class="fas fa-check-circle"></i> Printing & Scanning Basics</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="enroll-button">Enroll Now</a>
+            </div>
+
+            <!-- Advanced Excel Course Card -->
+            <div class="course-card featured">
+                <div class="course-header">
+                    <h3>Advanced Excel - Professional Course</h3>
+                    <span class="badge">🎓 Admissions Open</span>
+                </div>
+                <div class="course-details">
+                    <p class="duration"><i class="fas fa-clock"></i> <strong>Duration:</strong> 30 Days</p>
+                    <p class="fees"><i class="fas fa-rupee-sign"></i> <strong>Fees:</strong> ₹2,500</p>
+                    <p class="certificate"><i class="fas fa-certificate"></i> <strong>Certificate Provided After Completion</strong></p>
+                </div>
+                <div class="course-content">
+                    <h4>What You Will Learn:</h4>
+                    <ul class="topics-list">
+                        <li><i class="fas fa-check-circle"></i> Excel Basics & Advanced Features</li>
+                        <li><i class="fas fa-check-circle"></i> Data Analysis & Visualization</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Formulas & Functions</li>
+                        <li><i class="fas fa-check-circle"></i> Pivot Tables & Data Filtering</li>
+                        <li><i class="fas fa-check-circle"></i> VLOOKUP, INDEX & MATCH Functions</li>
+                        <li><i class="fas fa-check-circle"></i> Charts & Graphs Creation</li>
+                        <li><i class="fas fa-check-circle"></i> Macro & VBA Basics</li>
+                        <li><i class="fas fa-check-circle"></i> Financial Analysis & Forecasting</li>
+                        <li><i class="fas fa-check-circle"></i> Real-World Project Work</li>
                     </ul>
                 </div>
                 <a href="#contact" class="enroll-button">Enroll Now</a>
@@ -105,12 +135,12 @@
                 </div>
                 <div class="coming-card">
                     <i class="fas fa-hourglass-start"></i>
-                    <h4>Advanced Excel</h4>
+                    <h4>Programming Courses</h4>
                     <p>Coming Soon</p>
                 </div>
                 <div class="coming-card">
                     <i class="fas fa-hourglass-start"></i>
-                    <h4>Programming Courses</h4>
+                    <h4>Digital Marketing</h4>
                     <p>Coming Soon</p>
                 </div>
             </div>
@@ -124,7 +154,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Shakti Computer & Coaching Center</h3>
-                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical, engaging, and result-oriented.</p>
+                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical and effective.</p>
                     <p><strong>📍 Location:</strong> Near Govt. School, Gudha</p>
                 </div>
             </div>
@@ -153,6 +183,11 @@
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <input type="tel" placeholder="Your Phone Number">
+                    <select id="courseSelect" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1rem;">
+                        <option value="">Select Course</option>
+                        <option value="BCC - Basic Computer Course">BCC - Basic Computer Course (45 Days)</option>
+                        <option value="Advanced Excel - Professional Course">Advanced Excel - Professional Course (30 Days - ₹2,500)</option>
+                    </select>
                     <textarea placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
