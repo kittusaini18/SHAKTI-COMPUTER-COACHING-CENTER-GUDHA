@@ -22,7 +22,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div>
-                <button id="teacherLoginBtn" class="logout-btn" style="background:transparent;border:2px solid var(--white);color:var(--white);padding:8px 14px;border-radius:8px;">Teacher Login</button>
+                <a href="login.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">Teacher Portal</a>
             </div>
         </div>
     </nav>
@@ -157,7 +157,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Shakti Computer & Coaching Center</h3>
-                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical and effective.</p>
+                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical and engaging.</p>
                     <p><strong>📍 Location:</strong> Near Govt. School, Gudha</p>
                 </div>
             </div>
@@ -201,74 +201,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Teacher Login Modal -->
-    <div id="teacherModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" style="cursor:pointer;">&times;</span>
-            <h2>Teacher Login</h2>
-            <form id="teacherForm">
-                <input id="teacherEmail" type="email" placeholder="Email" required>
-                <input id="teacherPassword" type="password" placeholder="Password" required>
-                <button type="submit" class="submit-button">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Dashboard Modal -->
-    <div id="dashboardModal" class="modal" style="display:none;">
-        <div class="dashboard-content">
-            <div class="dashboard-header">
-                <h2>Teacher Dashboard</h2>
-                <div>
-                    <button id="logoutBtn" class="logout-btn">Logout</button>
-                </div>
-            </div>
-            <div class="dashboard-tabs">
-                <button class="tab-btn active" data-tab="tab-enrollments">Enrollments</button>
-                <button class="tab-btn" data-tab="tab-analytics">Analytics</button>
-            </div>
-            <div id="tab-enrollments" class="tab-content active">
-                <h3>Enrollments</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Course</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="enrollmentsTable">
-                        <!-- rows populated by script.js -->
-                    </tbody>
-                </table>
-            </div>
-            <div id="tab-analytics" class="tab-content">
-                <h3>Analytics</h3>
-                <div class="analytics-grid">
-                    <div class="stat-card">
-                        <h4>Total Students</h4>
-                        <div id="totalStudents" class="stat-number">0</div>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Total Enrollments</h4>
-                        <div id="totalEnrollments" class="stat-number">0</div>
-                    </div>
-                    <div class="stat-card">
-                        <h4>This Month</h4>
-                        <div id="thisMonth" class="stat-number">0</div>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Revenue</h4>
-                        <div id="revenue" class="stat-number">₹0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
