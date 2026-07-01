@@ -784,3 +784,81 @@ body {
         width: 98%;
     }
 }
+
+/* Brown/Black theme overrides */
+:root{
+  --primary-dark: #3E2723;   /* very dark brown */
+  --primary: #5D4037;        /* brown */
+  --accent: #000000;         /* black */
+  --muted: #8D6E63;          /* lighter brown */
+  --bg-light: #f5f3f2;
+  --text-dark: #111;
+  --white: #ffffff;
+}
+
+/* Navbar, hero and main accents */
+.navbar {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  color: var(--white);
+}
+
+/* Primary buttons */
+.cta-button,
+.enroll-button,
+.submit-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.cta-button:hover,
+.enroll-button:hover,
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* Badge & highlights */
+.badge {
+  background: var(--muted);
+  color: var(--white);
+}
+
+/* Links and icons */
+.topics-list i,
+.contact-card a {
+  color: var(--primary-dark);
+}
+
+/* Contact section background adjusted to lighter neutral */
+.contact {
+  background: linear-gradient(135deg, #efe9e6 0%, #f5f3f2 100%) !important;
+  color: var(--text-dark);
+}
+
+/* Course card borders / accents */
+.course-card.featured {
+  border-left: 5px solid var(--primary-dark);
+}
+
+/* Footer as black */
+.footer {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* Success message style (optional override) */
+#enrollmentMessage {
+  background: #efebe9; /* light warm */
+  color: var(--primary-dark);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Ensure readable text color on light backgrounds */
+body, .contact-card, .course-content, .about-text {
+  color: var(--text-dark);
+}
