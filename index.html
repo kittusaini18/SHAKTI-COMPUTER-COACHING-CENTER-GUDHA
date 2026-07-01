@@ -22,7 +22,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div>
-                <a href="login.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">Teacher Portal</a>
+                <a href="login.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">Teacher Login</a>
             </div>
         </div>
     </nav>
@@ -67,7 +67,7 @@
                         <li><i class="fas fa-check-circle"></i> Printing & Scanning Basics</li>
                     </ul>
                 </div>
-                <a href="#contact" class="enroll-button">Enroll Now</a>
+                <a href="enrollment.html?course=BCC" class="enroll-button" onclick="enrollCourse('BCC - Basic Computer Course', event)">Enroll Now</a>
             </div>
 
             <!-- Advanced Excel Course Card -->
@@ -95,7 +95,7 @@
                         <li><i class="fas fa-check-circle"></i> Real-World Project Work</li>
                     </ul>
                 </div>
-                <a href="#contact" class="enroll-button">Enroll Now</a>
+                <a href="enrollment.html?course=Advanced%20Excel" class="enroll-button" onclick="enrollCourse('Advanced Excel - Professional Course', event)">Enroll Now</a>
             </div>
         </div>
     </section>
@@ -157,7 +157,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Shakti Computer & Coaching Center</h3>
-                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical and engaging.</p>
+                    <p>We are dedicated to providing quality computer education and coaching services to students of all levels. Our experienced instructors are committed to making learning practical, engaging, and result-oriented.</p>
                     <p><strong>📍 Location:</strong> Near Govt. School, Gudha</p>
                 </div>
             </div>
@@ -211,5 +211,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function enrollCourse(courseName, event) {
+            event.preventDefault();
+            // Store the course name in localStorage
+            localStorage.setItem('selectedCourse', courseName);
+            // Redirect to enrollment form
+            window.location.href = 'enrollment.html?course=' + encodeURIComponent(courseName);
+        }
+    </script>
 </body>
 </html>
