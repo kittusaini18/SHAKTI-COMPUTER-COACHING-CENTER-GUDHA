@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - SHAKTI Computer & Coaching Center</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>SHAKTI Computer & Coaching Center</h1>
+                <h2>Teacher Dashboard</h2>
+            </div>
+            <div class="header-user">
+                <span id="userEmail"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="dashboard-grid">
+                <section class="dashboard-card">
+                    <h3>Enrollment Requests</h3>
+                    <div id="studentsList" class="data-list">
+                        <p>No enrollment requests yet</p>
+                    </div>
+                </section>
+
+                <section class="dashboard-card">
+                    <h3>Activity Log</h3>
+                    <div id="notificationsList" class="data-list">
+                        <p>No activities logged</p>
+                    </div>
+                </section>
+
+                <section class="dashboard-card">
+                    <h3>Teacher Accounts & Contact</h3>
+                    <div class="contact-info">
+                        <p><strong>Teacher 1:</strong> kittukapoor671@gmail.com</p>
+                        <p><strong>Teacher 2:</strong> aysuhkapoor900@gmail.com</p>
+                        <p><strong>Phone:</strong> 8571913652</p>
+                    </div>
+                </section>
+
+                <section class="dashboard-card">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button onclick="viewEnrollments()" class="btn-action">View All Enrollments</button>
+                        <button onclick="viewNotifications()" class="btn-action">View Activity Log</button>
+                        <button onclick="exportData()" class="btn-action">Export Data</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
