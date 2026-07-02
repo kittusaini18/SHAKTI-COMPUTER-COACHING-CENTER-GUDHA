@@ -290,6 +290,56 @@
             overflow-y: auto;
         }
 
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .service-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            transform: scale(1.05);
+        }
+
         @media (max-width: 768px) {
             .photo-tool-container {
                 padding: 20px;
@@ -320,6 +370,10 @@
             .image-container img {
                 max-height: 250px;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -333,8 +387,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#photo-tool">Photo Tool</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -350,7 +404,7 @@
             <h1>Government Services at Your Doorstep</h1>
             <p>Shakti CSC - Your Trusted Common Service Center</p>
             <p class="tagline">Digital Payments | Government Forms | Online Services | Document Assistance</p>
-            <a href="#services" class="cta-button">Explore Services</a>
+            <a href="#photo-tool" class="cta-button">Get Started</a>
         </div>
     </section>
 
@@ -365,7 +419,7 @@
                     <div class="upload-box">
                         <i class="fas fa-camera"></i>
                         <h3>Take or Upload Photo</h3>
-                        <p>Click to take photo with camera or upload from device</p>
+                        <p>Click to upload photo from your device</p>
                         <input type="file" id="photoInput" accept="image/*" style="display:none;">
                         <button class="upload-button" onclick="document.getElementById('photoInput').click()">
                             <i class="fas fa-upload"></i> Choose Photo
@@ -379,7 +433,7 @@
                         
                         <!-- Image Display -->
                         <div class="image-container">
-                            <img id="image" src="" alt="Photo">
+                            <img id="image" src="" alt="Photo" style="width: auto; height: auto;">
                         </div>
 
                         <!-- Editing Tools -->
@@ -411,7 +465,7 @@
                             <div class="tool-group">
                                 <label>🎯 Background Color</label>
                                 <div class="color-picker">
-                                    <button class="color-btn" style="background: white;" data-color="white" title="White"></button>
+                                    <button class="color-btn" style="background: white; border: 3px solid #333;" data-color="white" title="White"></button>
                                     <button class="color-btn" style="background: #FF0000;" data-color="#FF0000" title="Red"></button>
                                     <button class="color-btn" style="background: #0000FF;" data-color="#0000FF" title="Blue"></button>
                                     <button class="color-btn" style="background: #FFC0CB;" data-color="#FFC0CB" title="Pink"></button>
@@ -469,207 +523,82 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="courses">
+    <section id="services" class="photo-tool-section">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>🌐 Government Services</h2>
+            <p class="subtitle">Access all services from one place</p>
             
-            <!-- Aadhaar Services -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>Aadhaar Services</h3>
-                    <span class="badge">📱 Available</span>
+            <div class="services-grid">
+                <!-- Aadhaar Services -->
+                <div class="service-card">
+                    <h3>📱 Aadhaar Services</h3>
+                    <p>• New Aadhaar Enrollment</p>
+                    <p>• Aadhaar Update & Correction</p>
+                    <p>• E-Aadhaar Download</p>
+                    <p>• Aadhaar Lock/Unlock</p>
+                    <a href="https://resident.uidai.gov.in/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit Aadhaar Portal
+                    </a>
                 </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-id-card"></i> <strong>Aadhaar Enrollment & Updates</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>Address Change & Correction</strong></p>
-                    <p class="certificate"><i class="fas fa-file-alt"></i> <strong>Aadhaar Print & Download</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> New Aadhaar Enrollment</li>
-                        <li><i class="fas fa-check-circle"></i> Aadhaar Update (Address, Name, DOB)</li>
-                        <li><i class="fas fa-check-circle"></i> E-Aadhaar Download</li>
-                        <li><i class="fas fa-check-circle"></i> Aadhaar Lock/Unlock</li>
-                        <li><i class="fas fa-check-circle"></i> Mobile Number Linking</li>
-                        <li><i class="fas fa-check-circle"></i> Aadhaar Verification</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=aadhaar" class="enroll-button" onclick="selectService('Aadhaar Services', event)">Apply Now</a>
-            </div>
 
-            <!-- PAN & Tax Services -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>PAN & Tax Services</h3>
-                    <span class="badge">📱 Available</span>
+                <!-- PAN Services -->
+                <div class="service-card">
+                    <h3>💼 PAN & Tax Services</h3>
+                    <p>• New PAN Application</p>
+                    <p>• PAN Correction & Duplicate</p>
+                    <p>• ITR Filing Assistance</p>
+                    <p>• Income Certificate Services</p>
+                    <a href="https://www.pan.utiitsl.com/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit PAN Portal
+                    </a>
                 </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-file-invoice-dollar"></i> <strong>PAN Application & Correction</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>ITR Filing Assistance</strong></p>
-                    <p class="certificate"><i class="fas fa-certificate"></i> <strong>Tax Document Services</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> New PAN Application</li>
-                        <li><i class="fas fa-check-circle"></i> PAN Correction</li>
-                        <li><i class="fas fa-check-circle"></i> Duplicate PAN</li>
-                        <li><i class="fas fa-check-circle"></i> ITR Filing Guidance</li>
-                        <li><i class="fas fa-check-circle"></i> Income Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Tax Documents Assistance</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=pan" class="enroll-button" onclick="selectService('PAN & Tax Services', event)">Apply Now</a>
-            </div>
 
-            <!-- Passport Services -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>Passport Services</h3>
-                    <span class="badge">📱 Available</span>
+                <!-- Passport Services -->
+                <div class="service-card">
+                    <h3>🛂 Passport Services</h3>
+                    <p>• New Passport Application</p>
+                    <p>• Passport Renewal</p>
+                    <p>• Passport Correction</p>
+                    <p>• Police Clearance & Verification</p>
+                    <a href="https://www.passportindia.gov.in/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit Passport Portal
+                    </a>
                 </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-passport"></i> <strong>Passport Application Support</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>Renewal & Correction</strong></p>
-                    <p class="certificate"><i class="fas fa-file-alt"></i> <strong>Document Verification</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> New Passport Application</li>
-                        <li><i class="fas fa-check-circle"></i> Passport Renewal</li>
-                        <li><i class="fas fa-check-circle"></i> Passport Correction</li>
-                        <li><i class="fas fa-check-circle"></i> Police Clearance</li>
-                        <li><i class="fas fa-check-circle"></i> Document Verification</li>
-                        <li><i class="fas fa-check-circle"></i> Appointment Booking</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=passport" class="enroll-button" onclick="selectService('Passport Services', event)">Apply Now</a>
-            </div>
 
-            <!-- Digital Payment Services -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>Digital Payment Services</h3>
-                    <span class="badge">💳 Available</span>
+                <!-- Banking Services -->
+                <div class="service-card">
+                    <h3>🏦 Banking Services</h3>
+                    <p>• Jan Dhan Account Opening</p>
+                    <p>• Savings Account Services</p>
+                    <p>• Business Loan Assistance</p>
+                    <p>• Digital Banking Solutions</p>
+                    <a href="https://www.pmjdy.gov.in/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit Banking Portal
+                    </a>
                 </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-money-bill"></i> <strong>Bill Payments</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>Fund Transfer Services</strong></p>
-                    <p class="certificate"><i class="fas fa-mobile-alt"></i> <strong>Mobile & Utility Payments</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> Electricity Bill Payment</li>
-                        <li><i class="fas fa-check-circle"></i> Water Bill Payment</li>
-                        <li><i class="fas fa-check-circle"></i> Mobile Recharge</li>
-                        <li><i class="fas fa-check-circle"></i> Insurance Payments</li>
-                        <li><i class="fas fa-check-circle"></i> Money Transfer (NEFT/RTGS)</li>
-                        <li><i class="fas fa-check-circle"></i> Online Shopping Assistance</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=payment" class="enroll-button" onclick="selectService('Digital Payment Services', event)">Get Started</a>
-            </div>
 
-            <!-- Banking & Financial Services -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>Banking Services</h3>
-                    <span class="badge">🏦 Available</span>
+                <!-- Digital Payment Services -->
+                <div class="service-card">
+                    <h3>💳 Digital Payments</h3>
+                    <p>• Bill Payment Services</p>
+                    <p>• Mobile Recharge</p>
+                    <p>• Money Transfer (NEFT/RTGS)</p>
+                    <p>• Insurance Payments</p>
+                    <a href="https://www.npci.org.in/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit Payment Portal
+                    </a>
                 </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-university"></i> <strong>Bank Account Opening</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>Jan Dhan Account & Others</strong></p>
-                    <p class="certificate"><i class="fas fa-credit-card"></i> <strong>Loan Guidance</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> Jan Dhan Account Opening</li>
-                        <li><i class="fas fa-check-circle"></i> Savings Account Opening</li>
-                        <li><i class="fas fa-check-circle"></i> Business Loan Assistance</li>
-                        <li><i class="fas fa-check-circle"></i> Mudra Loan Guidance</li>
-                        <li><i class="fas fa-check-circle"></i> Insurance Account</li>
-                        <li><i class="fas fa-check-circle"></i> Digital Banking Training</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=banking" class="enroll-button" onclick="selectService('Banking Services', event)">Apply Now</a>
-            </div>
 
-            <!-- Government Certificates -->
-            <div class="course-card featured">
-                <div class="course-header">
-                    <h3>Government Certificates</h3>
-                    <span class="badge">📄 Available</span>
-                </div>
-                <div class="course-details">
-                    <p class="duration"><i class="fas fa-certificate"></i> <strong>Income & Caste Certificates</strong></p>
-                    <p class="fees"><i class="fas fa-check"></i> <strong>Residence & Other Documents</strong></p>
-                    <p class="certificate"><i class="fas fa-file"></i> <strong>Official Documentation</strong></p>
-                </div>
-                <div class="course-content">
-                    <h4>Included Services:</h4>
-                    <ul class="topics-list">
-                        <li><i class="fas fa-check-circle"></i> Income Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Caste Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Residence Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Character Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Birth Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Marriage Certificate</li>
-                    </ul>
-                </div>
-                <a href="enrollment.html?service=certificates" class="enroll-button" onclick="selectService('Government Certificates', event)">Apply Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coming Soon Services Section -->
-    <section class="coming-soon">
-        <div class="container">
-            <h2>Additional Services</h2>
-            <p class="subtitle">Coming Soon</p>
-            <div class="coming-soon-grid">
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Driving License</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Vehicle Registration</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Education Documents</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Land Records</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>GST Registration</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Pension Services</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Life Insurance</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="coming-card">
-                    <i class="fas fa-hourglass-start"></i>
-                    <h4>Scholarship Programs</h4>
-                    <p>Coming Soon</p>
+                <!-- Government Certificates -->
+                <div class="service-card">
+                    <h3>📄 Government Certificates</h3>
+                    <p>• Income Certificate</p>
+                    <p>• Caste Certificate</p>
+                    <p>• Residence Certificate</p>
+                    <p>• Birth & Marriage Certificate</p>
+                    <a href="https://www.india.gov.in/" target="_blank" class="service-link">
+                        <i class="fas fa-external-link-alt"></i> Visit India Portal
+                    </a>
                 </div>
             </div>
         </div>
@@ -682,7 +611,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Shakti CSC - Common Service Center</h3>
-                    <p>We are a authorized Common Service Center providing comprehensive government services and digital solutions to citizens. Our trained staff is committed to making government services accessible, affordable, and convenient for all.</p>
+                    <p>We are an authorized Common Service Center providing comprehensive government services and digital solutions to citizens. Our trained staff is committed to making government services accessible, affordable, and convenient for all.</p>
                     <p><strong>🎯 Our Mission:</strong> Bridge the digital divide and bring government services to your doorstep.</p>
                     <p><strong>📍 Location:</strong> Near Govt. School, Gudha</p>
                     <p><strong>✓ CSC Authorized | ✓ Digital Registered | ✓ Government Certified</strong></p>
@@ -699,7 +628,7 @@
                 <div class="contact-card">
                     <h3>Shakti CSC</h3>
                     <p><strong>📍 Location:</strong> Near Govt. School, Gudha</p>
-                    <p><strong>📧 Email:</strong> <a href="mailto:shakticscs@gmail.com">shakticscs@gmail.com</a></p>
+                    <p><strong>📧 Email:</strong> <a href="mailto:kittukapoor671@gmail.com">kittukapoor671@gmail.com</a></p>
                 </div>
                 <div class="contact-card">
                     <h3>Contact Numbers</h3>
@@ -728,12 +657,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <script src="script.js"></script>
     <script src="photo-tool.js"></script>
-    <script>
-        function selectService(serviceName, event) {
-            event.preventDefault();
-            localStorage.setItem('selectedService', serviceName);
-            window.location.href = 'enrollment.html?service=' + encodeURIComponent(serviceName);
-        }
-    </script>
 </body>
 </html>
